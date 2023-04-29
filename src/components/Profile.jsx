@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import deafultImg from '../logo192.png';
+
 export default function Profile({
   avatar = deafultImg,
   username,
@@ -32,3 +34,11 @@ export default function Profile({
     </div>
   );
 }
+
+Profile.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.number.isRequired,
+};

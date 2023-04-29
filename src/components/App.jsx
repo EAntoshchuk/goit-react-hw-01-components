@@ -1,5 +1,9 @@
 import user from '../json/user.json';
+// import data from '../json/data.json';
+import friends from '../json/friends.json';
+// import transactions from '../json/transactions.json';
 import Profile from './Profile';
+import FriendList from './FriendList';
 
 export default function App() {
   return (
@@ -21,6 +25,7 @@ export default function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
+      <FriendList friends={friends} />
     </div>
   );
 }
