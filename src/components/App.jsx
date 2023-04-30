@@ -19,7 +19,7 @@ export default function App() {
         color: '#010101',
       }}
     >
-      <span>React homework template</span>
+      <span>React homework-01 components</span>
       <div>
         <Profile
           username={user.username}
@@ -33,13 +33,12 @@ export default function App() {
         <FriendList friends={friends} />
       </div>
       <div>
-        <Statistics title="Upload stats" stats={data} />
+        <Statistics title="Upload stats" stats={data}>
+          <Statistics stats={data} />
+        </Statistics>
       </div>
       <div>
-        <Statistics stats={data} />
-      </div>
-      <div>
-        <TransactionHistory transactions={transactions} />;
+        <TransactionHistory transactions={transactions} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function Statistics({ title, stats }) {
+export default function Statistics({ title, stats, children }) {
   return (
     <section class="statistics">
       {title && <h2 class="title">{title}</h2>}
@@ -17,15 +17,21 @@ export default function Statistics({ title, stats }) {
           </li>
         ))}
       </ul>
+      {children}
     </section>
   );
 }
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
-  stats: PropTypes.array.isRequired,
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+  children: PropTypes.node,
 };
 
 function getRandomHexColor() {

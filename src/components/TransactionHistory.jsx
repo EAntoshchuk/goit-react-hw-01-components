@@ -14,7 +14,7 @@ export default function TransactionHistory({ transactions }) {
       <tbody>
         {transactions.map(transaction => {
           return (
-            <tr>
+            <tr key={transaction.id}>
               <td style={{ backgroundColor: getRandomHexColor() }}>
                 {transaction.type}
               </td>
@@ -33,7 +33,14 @@ export default function TransactionHistory({ transactions }) {
 }
 
 TransactionHistory.propTypes = {
-  transactions: PropTypes.array.isRequired,
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 function getRandomHexColor() {
