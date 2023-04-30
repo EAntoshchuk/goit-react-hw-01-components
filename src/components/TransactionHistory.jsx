@@ -15,13 +15,27 @@ export default function TransactionHistory({ transactions }) {
         {transactions.map(transaction => {
           return (
             <tr>
-              <td>{transaction.type}</td>
-              <td>{transaction.amount}</td>
-              <td>{transaction.currency}</td>
+              <td style={{ backgroundColor: getRandomHexColor() }}>
+                {transaction.type}
+              </td>
+              <td style={{ backgroundColor: getRandomHexColor() }}>
+                {transaction.amount}
+              </td>
+              <td style={{ backgroundColor: getRandomHexColor() }}>
+                {transaction.currency}
+              </td>
             </tr>
           );
         })}
       </tbody>
     </table>
   );
+}
+
+TransactionHistory.propTypes = {
+  transactions: PropTypes.array.isRequired,
+};
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }

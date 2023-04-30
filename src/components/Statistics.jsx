@@ -7,7 +7,11 @@ export default function Statistics({ title, stats }) {
 
       <ul class="stat-list">
         {stats.map(stat => (
-          <li class="item" key={stat.id}>
+          <li
+            class="item"
+            key={stat.id}
+            style={{ backgroundColor: getRandomHexColor() }}
+          >
             <span class="label">.{stat.label}</span>
             <span class="percentage"> {stat.percentage}%</span>
           </li>
