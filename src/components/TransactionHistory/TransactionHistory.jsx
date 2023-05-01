@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import css from './TransactionHistory.module.css';
 
 export default function TransactionHistory({ transactions }) {
   return (
-    <table class="transaction-history">
-      <thead>
+    <table className={css.transaction_history}>
+      <thead className={css.title}>
         <tr>
           <th>Type</th>
           <th>Amount</th>
@@ -14,14 +15,23 @@ export default function TransactionHistory({ transactions }) {
       <tbody>
         {transactions.map(transaction => {
           return (
-            <tr key={transaction.id}>
-              <td style={{ backgroundColor: getRandomHexColor() }}>
+            <tr className={css.line} key={transaction.id}>
+              <td
+                className={css.column}
+                style={{ backgroundColor: getRandomHexColor() }}
+              >
                 {transaction.type}
               </td>
-              <td style={{ backgroundColor: getRandomHexColor() }}>
+              <td
+                className={css.column}
+                style={{ backgroundColor: getRandomHexColor() }}
+              >
                 {transaction.amount}
               </td>
-              <td style={{ backgroundColor: getRandomHexColor() }}>
+              <td
+                className={css.column}
+                style={{ backgroundColor: getRandomHexColor() }}
+              >
                 {transaction.currency}
               </td>
             </tr>

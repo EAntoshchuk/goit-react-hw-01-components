@@ -3,18 +3,18 @@ import css from './Statistics.module.css';
 
 export default function Statistics({ title, stats, children }) {
   return (
-    <section class="statistics">
-      {title && <h2 class="title">{title}</h2>}
+    <section className={css.statistics}>
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.stat_list}>
         {stats.map(stat => (
           <li
-            className="item"
+            className={css.item}
             key={stat.id}
             style={{ backgroundColor: getRandomHexColor() }}
           >
-            <span className={css.label}>.{stat.label}</span>
-            <span className={css.percentage}> {stat.percentage}%</span>
+            <span className={css.label}>{stat.label}</span>
+            <span className={css.percentage}>- {stat.percentage}%</span>
           </li>
         ))}
       </ul>

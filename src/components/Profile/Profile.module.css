@@ -64,3 +64,8 @@
   flex-basis: calc((100% - 30px) / 3);
   color: aliceblue;
 }
+
+.stats_item:hover,
+.stats_item:focus {
+  color: #fffd6a;
+}

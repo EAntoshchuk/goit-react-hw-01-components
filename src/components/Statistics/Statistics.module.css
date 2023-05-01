@@ -1,1 +1,26 @@
-grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+.stat_list {
+  margin-bottom: 50px;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: rgb(125, 239, 109);
+  border-radius: 5px;
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 250ms;
+}
+
+.item:hover,
+.item:focus {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.label {
+  margin-right: 5px;
+}
